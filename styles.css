@@ -43,7 +43,6 @@ p {
   font-size: 1.05rem;
   line-height: 1.65;
   color: #3c3c44;
-  hanging-punctuation: first;
 }
 
 li {
@@ -344,4 +343,3 @@ main, section, .card, .hero-content {
     padding-right: 6%;
   }
 }
-
