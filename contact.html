@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Contact | Capital Engagement Partners</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -10,15 +15,24 @@
 
 <header class="site-header">
   <div class="logo">
-    <img src="logo.png" alt="Capital Engagement Partners logo" style="width:180px; height:auto;">
+    <img src="logo.png" alt="Capital Engagement Partners logo">
   </div>
-  <nav class="nav">
+
+  <button class="mobile-menu-toggle" aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="nav mobile-nav">
     <a href="index.html">Home</a>
     <a href="firm.html">Firm</a>
     <a href="programme.html">Investor Engagement Programme</a>
     <a href="contact.html" class="active">Contact</a>
   </nav>
 </header>
+
+<div class="mobile-overlay"></div>
 
 <main class="page">
 
@@ -61,7 +75,6 @@
       clients and investors.
     </p>
   </section>
-
 </main>
 
 <footer class="site-footer">
@@ -72,6 +85,27 @@
     <a href="contact.html" class="active">Contact</a>
   </div>
 </footer>
+
+<script>
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  const nav = document.querySelector('.mobile-nav');
+  const overlay = document.querySelector('.mobile-overlay');
+
+  function openMenu() {
+    nav.classList.add('open');
+    overlay.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    nav.classList.remove('open');
+    overlay.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+
+  toggle.addEventListener('click', openMenu);
+  overlay.addEventListener('click', closeMenu);
+</script>
 
 </body>
 </html>
